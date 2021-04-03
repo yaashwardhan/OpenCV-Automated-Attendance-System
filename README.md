@@ -6,7 +6,7 @@
 
 *Originally Posted: https://github.com/yaashwardhan*
 
-*Visit: https://yaashwardhan.me*
+*Visit: http://yaashwardhan.me*
 
 ## Prerequisites & Packages Used
 - cv2
