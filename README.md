@@ -3,8 +3,10 @@
 >*Note: The GUI was built to be compatible with MacOS, hence some Tkinter widgets might be buggy on other operating systems.*
 
 *GNU General Public License v3.0
-Originally Posted: github.com/yaashwardhan
-Visit: yaashwardhan.me*
+
+Originally Posted: https://github.com/yaashwardhan
+
+Visit: https://yaashwardhan.me*
 
 ## Prerequisites & Packages Used
 - cv2
