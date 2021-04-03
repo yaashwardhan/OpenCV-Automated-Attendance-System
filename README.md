@@ -2,11 +2,11 @@
 ### Python Project, using OpenCV's Haar's Cascade Classifiers.
 >*Note: The GUI was built to be compatible with MacOS, hence some Tkinter widgets might be buggy on other operating systems.*
 
-*GNU General Public License v3.0
+*GNU General Public License v3.0*
 
-Originally Posted: https://github.com/yaashwardhan
+*Originally Posted: https://github.com/yaashwardhan*
 
-Visit: https://yaashwardhan.me*
+*Visit: https://yaashwardhan.me*
 
 ## Prerequisites & Packages Used
 - cv2
