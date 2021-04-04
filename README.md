@@ -10,9 +10,9 @@
 
 ## Working
 
-Click on the video below to redirect to YouTube
+*Click on the video below to redirect to YouTube*
 
-[![IMAGE ALT TEXT](https://img.youtube.com/vi/6sbRPX86hQ4/0.jpg)](https://www.youtube.com/watch?v=6sbRPX86hQ4 "Python SQL Project: Open CV Automated Facial Attendance System Using Haar's Cascade Classifiers")
+>[![IMAGE ALT TEXT](https://img.youtube.com/vi/6sbRPX86hQ4/0.jpg)](https://www.youtube.com/watch?v=6sbRPX86hQ4 "Python SQL Project: Open CV Automated Facial Attendance System Using Haar's Cascade Classifiers")
 
 
 ## Prerequisites & Packages Used
