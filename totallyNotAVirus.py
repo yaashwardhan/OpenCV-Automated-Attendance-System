@@ -31,7 +31,7 @@ except Error as e:
 ########################## Basic Methods ##########################
 
 
-def assure_path_exists(path):
+def path_existence(path):
     """
     This function will create the directory if it does not exist
     """
@@ -57,11 +57,11 @@ def capture_img():
 
     notifier.configure(text='CONSOLE: Capturing Images.. Creating A Dataset..')
     # Firstly make sure all the directories are present
-    assure_path_exists("dataset/")
-    assure_path_exists("attendance_sheets/")
-    assure_path_exists("student_details/")
-    assure_path_exists("trainer/")
-    assure_path_exists("trainer/trainer.yml")
+    path_existence("dataset/")
+    path_existence("daily_generated_attendance_csv/")
+    path_existence("student_details/")
+    path_existence("trainer/")
+    path_existence("trainer/trainer.yml")
 
     columns = ['SERIAL NO.',  'ID',  'NAME',
                'GENDER',  'AGE',  'PHONE NUMBER',  'ADDRESS']
@@ -128,7 +128,8 @@ def capture_img():
 
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-            face_rects = face_cascade.detectMultiScale(gray, 1.3, 5)
+            face_rects = face_cascade.detectMultiScale(
+                gray, 1.3, 5)  # img, scaleFactor=1.1, minNeighbors=5,
 
             for (x, y, w, h) in face_rects:
 
@@ -313,24 +314,24 @@ def clock_in():
     date = datetime.datetime.fromtimestamp(ts).strftime('%d-%m-%Y')
 
     """
-    Writing to attendance_sheets + date + .csv to display in GUI and also as a CSV
+    Writing to daily_generated_attendance_csv + date + .csv to display in GUI and also as a CSV
     """
     exists = os.path.isfile(
-        "attendance_sheets/attendance_sheets_" + date + ".csv")
+        "daily_generated_attendance_csv/daily_generated_attendance_csv_" + date + ".csv")
 
     if exists:
-        with open("attendance_sheets/attendance_sheets_" + date + ".csv", 'a+') as csvFile1:
+        with open("daily_generated_attendance_csv/daily_generated_attendance_csv_" + date + ".csv", 'a+') as csvFile1:
             writer = csv.writer(csvFile1)
             writer.writerow(attendance)
         csvFile1.close()
     else:
-        with open("attendance_sheets/attendance_sheets_" + date + ".csv", 'a+') as csvFile1:
+        with open("daily_generated_attendance_csv/daily_generated_attendance_csv_" + date + ".csv", 'a+') as csvFile1:
             writer = csv.writer(csvFile1)
             writer.writerow(col_names)
             writer.writerow(attendance)
         csvFile1.close()
 
-    with open("attendance_sheets/attendance_sheets_" + date + ".csv", 'r') as csvFile1:
+    with open("daily_generated_attendance_csv/daily_generated_attendance_csv_" + date + ".csv", 'r') as csvFile1:
         reader1 = csv.reader(csvFile1)
         for lines in reader1:
             i = i + 1
@@ -419,7 +420,7 @@ def showadminportal():
             """
             Updates the csv and sql database
             """
-            assure_path_exists("student_details/")
+            path_existence("student_details/")
 
             Idx = (txtfield1admin.get())
             namex = (txtfield2admin.get())
@@ -456,7 +457,7 @@ def showadminportal():
             """
             Deletes all attendance from database for selected student
             """
-            assure_path_exists("student_details/")
+            path_existence("student_details/")
 
             date = datetime.datetime.fromtimestamp(ts).strftime('%d-%m-%Y')
             Idxxx = ("'" + txtfield7admin.get() + "'")
@@ -464,7 +465,7 @@ def showadminportal():
             print(Idxxx)
             # reading the csv file
             df = pd.read_csv(
-                "attendance_sheets/attendance_sheets_" + date + ".csv")
+                "daily_generated_attendance_csv/daily_generated_attendance_csv_" + date + ".csv")
 
             lstxxx = df[df['Id'] == Idxxx].index.values
             for i in lstxxx:
@@ -472,7 +473,7 @@ def showadminportal():
                 df = df.drop(i)
 
             # writing into the file
-            df.to_csv("attendance_sheets/attendance_sheets_" +
+            df.to_csv("daily_generated_attendance_csv/daily_generated_attendance_csv_" +
                       date + ".csv", index=False)
 
             csv_updater()
@@ -881,7 +882,7 @@ date = datetime.datetime.fromtimestamp(ts).strftime('%d-%m-%Y')
 def csv_updater():
     tree.delete(*tree.get_children())
     try:
-        with open("attendance_sheets/attendance_sheets_" + date + ".csv") as f:
+        with open("daily_generated_attendance_csv/daily_generated_attendance_csv_" + date + ".csv") as f:
             reader = csv.DictReader(f, delimiter=',')
             for row in reader:
                 Id = row['Id']
