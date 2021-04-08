@@ -40,13 +40,6 @@ def path_existence(path):
         os.makedirs(dir)
 
 
-def tick():
-    # fetches local computer time
-    time_string = time.strftime('%H:%M:%S')
-    clock.config(text=time_string)
-    # refreshes every 200 milliseconds
-    clock.after(200, tick)
-
 ########################## Take Images, Create Dataset ##########################
 
 
