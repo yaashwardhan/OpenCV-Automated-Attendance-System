@@ -14,6 +14,7 @@
 
 
 ## Prerequisites & Packages Used
+
 - cv2
 - mysql.connector
 - pandas
