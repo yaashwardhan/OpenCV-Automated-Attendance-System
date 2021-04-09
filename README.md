@@ -6,8 +6,6 @@
 
 *Originally Posted: https://github.com/yaashwardhan*
 
-*Visit: http://yaashwardhan.me*
-
 ## Working
 
 *Click on the video below to redirect to YouTube*
