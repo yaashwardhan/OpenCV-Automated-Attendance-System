@@ -21,7 +21,7 @@
 - pandas
 - csv
 - numpy
-- tkinter, tkinter.ttk, PIL
+- tkinter, PIL
 - os, datetime, time, 
 
 Directories will be created during first runtime. 
