@@ -4,9 +4,6 @@
 
 *GNU General Public License v3.0*
 
-*Originally Posted: https://github.com/yaashwardhan or https://github.com/Aman-Kothari7*
-
-
 ## Working
 
 *Click on the video below to redirect to YouTube*
