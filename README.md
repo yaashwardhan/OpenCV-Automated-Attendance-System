@@ -11,7 +11,7 @@
 
 *Click on the video below to redirect to YouTube*
 
-[![Click Here](thumbnail.jpg)]([link_URL](https://www.youtube.com/watch?v=6sbRPX86hQ4)
+[![Click Here](thumbnail.jpg)(https://www.youtube.com/watch?v=6sbRPX86hQ4)]
 
 
 ## Prerequisites & Packages Used
